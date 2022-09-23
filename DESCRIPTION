@@ -1,5 +1,5 @@
 Package: CommKern
-Version: 1.0.0
+Version: 1.0.1
 Title: Network-Based Communities and Kernel Machine Methods
 Authors@R: c(person(given = "Alexandria", family = "Jensen",  email = "alexandria.jensen@cuanschutz.edu", role = c("aut", "cre"), comment = c(ORCID = "0000-0001-6337-9079")),
              person(given = "Peter",      family = "DeWitt",  email = "peter.dewitt@cuanschutz.edu",      role = c("ctb"),        comment = c(ORCID = "0000-0002-6391-0795")),
@@ -17,10 +17,10 @@ Suggests: knitr, matrixcalc, pheatmap, rmarkdown
 RoxygenNote: 7.2.1
 VignetteBuilder: knitr
 NeedsCompilation: no
-Packaged: 2022-09-19 23:08:56 UTC; jenseale
+Packaged: 2022-09-22 18:30:47 UTC; jenseale
 Author: Alexandria Jensen [aut, cre] (<https://orcid.org/0000-0001-6337-9079>),
   Peter DeWitt [ctb] (<https://orcid.org/0000-0002-6391-0795>),
   Debashis Ghosh [ths] (<https://orcid.org/0000-0001-6618-1316>)
 Maintainer: Alexandria Jensen <alexandria.jensen@cuanschutz.edu>
 Repository: CRAN
-Date/Publication: 2022-09-20 09:46:09 UTC
+Date/Publication: 2022-09-23 10:20:06 UTC

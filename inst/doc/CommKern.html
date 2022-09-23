@@ -713,7 +713,7 @@ the function. This will not affect the end results of the
 <p>From here, we can implement the <code>hms</code> function. There are
 several input parameters to discuss.</p>
 <div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(hms)</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="do">## function (input_net, spins, alpha, coolfact, false_pos, max_layers)</span></span></code></pre></div>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="do">## function (input_net, spins, alpha, coolfact, tol, max_layers)</span></span></code></pre></div>
 <p>The <code>spins</code> parameter denotes the <em>maximum</em> number
 of spins, or communities, the algorithm can utilize during optimization.
 The whole number integer value of <code>spins</code> must lie within
@@ -731,13 +731,11 @@ functional and structural inputs equally.</p>
 to cool the heatbath algorithm, which is used to find the optimal
 partitioning of nodes to communities. This parameter must be in <span class="math inline">\(\left(0,1\right)\)</span>, but is usually set to
 be <span class="math inline">\(0.95-0.99\)</span>.</p>
-<p>The <code>false_pos</code> parameter indicates the level of false
-positives to allow the system to make (if the ground truth is known).
-This value must be in <span class="math inline">\(\left(0,1\right)\)</span>, though typically is set
-to be <span class="math inline">\(0.01-0.05\)</span>. If the ground
-truth is not known, this parameter indicates how difficult it is for a
-node to be randomly reassigned to a different community when the
-system’s energy is not impacted by its movement.</p>
+<p>The <code>tol</code> parameter indicates the tolerance level of
+accepting the proposed changes within a temperature; at the end of each
+sweep, the number of proposed changes to the partition is assessed to
+see if it exceeds a threshold determined as a function of tol and spins,
+typically set to be 0.01-0.05.</p>
 <p>Finally, <code>max_layers</code> is the parameter controlling the
 number of layers of communities within the network. At least one layer
 must be specified in the algorithm. End users can specify the number of
@@ -766,7 +764,7 @@ Hamiltonian values for each run of the HMS algorithm.</p></li>
 <span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>      <span class="at">spins =</span> <span class="dv">2</span>,</span>
 <span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>      <span class="at">alpha =</span> <span class="dv">0</span>,</span>
 <span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>      <span class="at">coolfact =</span> <span class="fl">0.99</span>,</span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>      <span class="at">false_pos =</span> <span class="fl">0.01</span>,</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>      <span class="at">tol =</span> <span class="fl">0.01</span>,</span>
 <span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>      <span class="at">max_layers =</span> <span class="dv">1</span>)</span>
 <span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(hms_object)</span>
 <span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a><span class="do">## List of 3</span></span>

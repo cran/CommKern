@@ -40,7 +40,7 @@ hms_object <-
       spins = 2,
       alpha = 0,
       coolfact = 0.99,
-      false_pos = 0.01,
+      tol = 0.01,
       max_layers = 1)
 str(hms_object)
 
